@@ -39,7 +39,7 @@ heading_style = """
 #read csv file from a url
 dataset_url = "C:/Users/barry/.spyder-py3/test2/processed_cleveland_simple.csv"
 
-@st.cache_data()
+@st.cache()
 
 def get_data() -> pd.DataFrame:
     return pd.read_csv(dataset_url)
