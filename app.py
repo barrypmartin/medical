@@ -37,7 +37,7 @@ heading_style = """
 
 
 #read csv file from a url
-dataset_url = "C:/Users/barry/.spyder-py3/test2/processed_cleveland_simple.csv"
+dataset_url = "https://github.com/barrypmartin/medical/blob/main/processed_cleveland_simple.csv"
 
 @st.cache()
 
