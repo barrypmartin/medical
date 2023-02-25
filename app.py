@@ -23,7 +23,7 @@ import streamlit as st #web development
 #read csv file from a url
 dataset_url = "https://raw.githubusercontent.com/barrypmartin/medical/main/processed_cleveland_simple.csv"
 
-@st.experimental_memo()
+@st.cache_data()
 
 def get_data() -> pd.DataFrame:
     return pd.read_csv(dataset_url)
@@ -46,17 +46,17 @@ df = df[df["age"] == job_filter]
 for seconds in range(200):
 
     df["age_new"] = df["age"] * np.random.choice(range(1, 5))
-    df["height_new"] = df["height"] * np.random.choice(range(1, 5))
+    df["bldpress_new"] = df["restbldpress"] * np.random.choice(range(1, 5))
 
     # creating KPIs
     avg_age = np.mean(df["age_new"])
 
     count_married = int(
-        df[(df["ap_lo"] == "ap_hi")]["ap_lo"].count()
+        df[(df["chol"] == "maxhrtrate")]["chol"].count()
         + np.random.choice(range(1, 30))
     )
     
-    height= np.mean(df["height_new"])
+    height= np.mean(df["bldpress_new"])
 
 with placeholder.container():
 
@@ -87,7 +87,7 @@ with placeholder.container():
       with fig_col1:
           st.markdown("### First Chart")
           fig = px.density_heatmap(
-              data_frame=df, y="age_new", x="ap_lo"
+              data_frame=df, y="age_new", x="chol"
           )
           st.write(fig)
           
