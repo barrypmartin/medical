@@ -21,7 +21,7 @@ import streamlit as st #web development
 
 
 #read csv file from a url
-dataset_url = 'https://github.com/barrypmartin/medical/blob/main/heart_data_ages.csv'
+dataset_url = 'https://github.com/barrypmartin/medical/blob/main/processed_cleveland_simple.csv'
 
 @st.experimental_memo()
 
