@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-data = pd.read_csv('https://github.com/barrypmartin/medical/blob/main/heart_attack_predictor.py')
+data = pd.read_csv('https://raw.githubusercontent.com/barrypmartin/medical/main/processed_cleveland_simple.csv')
 
 X = data.drop('target', axis=1)
 y = data['target']
